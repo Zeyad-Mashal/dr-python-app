@@ -1,0 +1,465 @@
+.lecture,
+.lecture_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lecture_header {
+  width: 100%;
+}
+.lecture_header img {
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+.lecture_content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lecture_content > h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.lecture_content .videoPlay {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #eee;
+}
+.lecture_content .videoPlay .iframe-container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  pointer-events: none;
+}
+.lecture_content .videoPlay .iframe-container iframe {
+  width: 100%;
+  height: 400px;
+  pointer-events: none;
+  margin: 1rem 0;
+}
+.lecture_content .videoPlay svg {
+  color: #fff;
+  position: absolute;
+  background-color: rgb(225, 63, 63);
+  padding: 1rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pdf_viewer {
+  width: 100%;
+}
+.pdf_viewer #pdf {
+  width: 100%;
+}
+.model_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 20px auto;
+}
+.model_container .media {
+  height: 200px;
+  width: 100%;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  cursor: pointer;
+}
+.model {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #000;
+  transition: opacity 0.4s ease, visibility 0.4s ease,
+    transform 0.4s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  overflow: hidden;
+  z-index: 9999999;
+}
+.model.open {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.model video {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.model svg {
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.model button {
+  padding: 5px 20px;
+  width: 120px;
+  border: 2px solid #333;
+  border-radius: 16px;
+  font-weight: bold;
+}
+.flow_info {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 999;
+  animation: flowRandomly 10s ease-in-out infinite;
+}
+.flow_info p {
+  color: red;
+  font-weight: bold;
+  opacity: 0.5;
+  margin: 0;
+  padding: 0;
+}
+.floating-username {
+  position: fixed;
+  top: 10px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px; /* Adjust as needed */
+  color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+  z-index: 9999; /* Ensure it's on top */
+  pointer-events: none; /* Prevents interaction */
+  animation: float 3s ease-in-out infinite alternate;
+}
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.videoContainer .fullscreen {
+  width: 96%;
+  height: 85%;
+}
+.videoContainer .open {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  width: 125px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+.videoContainer .close {
+  width: 135px;
+  height: 62px;
+  position: absolute;
+  top: 99%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+  font-size: 24px; /* حجم الخط */
+  z-index: 999;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 0;
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.video-container iframe {
+  height: 100%;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    transform: translate(-50%, 10px);
+  }
+}
+.lceture_loading_list {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.lceture_loading_item {
+  width: 90%;
+  background-color: #fff;
+  height: 300px;
+  box-shadow: 4px 4px 10px #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+}
+.lceture_loading_item > div {
+  width: 90%;
+  background-color: #ccc;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: skeletonLoadingVideo 3s ease-in-out infinite;
+  transition: 0.5s ease-in-out;
+}
+.lceture_loading_item svg {
+  background-color: red;
+  color: #fff;
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.videoContainer {
+  width: 100%;
+}
+.videoContainer .iframe-container {
+  width: 100%;
+  height: 450px;
+}
+
+.videoContainer .iframe-container iframe {
+  width: 97%;
+  height: 100%;
+}
+.pdf_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.pdf_container iframe {
+  width: 95%;
+}
+.error_popup {
+  position: fixed;
+  background-color: #fff;
+  border: none;
+  border-radius: 16px;
+  height: 180px;
+  width: 300px;
+  top: 40%;
+  box-shadow: 4px 4px 10px #aaa;
+  z-index: 999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.error_popup > h3 {
+  color: rgb(234, 1, 1);
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.error_popup > svg {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-size: 1.3rem;
+  padding: 1rem;
+  width: 50px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.error_popup > svg:hover {
+  color: #444;
+  transform: scale(1.1);
+}
+.error_popup > p {
+  padding: 0 1rem;
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+}
+.loader_views {
+  width: 100%;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader_views_spinner {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  border-radius: 50%;
+  color: rgb(213, 0, 0);
+  animation: fill 1s ease-in infinite alternate;
+  z-index: 9999;
+}
+.loader_views_spinner::before,
+.loader_views_spinner::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  left: 48px;
+  top: 0;
+  animation: fill 0.9s ease-in infinite alternate;
+}
+
+.loader_views_spinner::after {
+  left: auto;
+  right: 48px;
+  animation-duration: 1.1s;
+}
+.close_open {
+  margin-bottom: 1.5rem;
+}
+.overlay_out,
+.overlay_out_bottom {
+  position: absolute;
+  top: 35px;
+  width: 100%;
+  height: 90px;
+  background-color: transparent;
+  z-index: 999;
+}
+.overlay_out_bottom {
+  top: 80%;
+  width: 200px;
+  left: 0;
+  height: 70px;
+}
+.counter_views {
+  /* position: absolute;
+  top: 0%; */
+  padding-top: 2rem;
+}
+.counter_views span {
+  color: #eee;
+  font-size: 1rem;
+}
+.counter_time {
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  width: 70px;
+  height: 70px;
+  z-index: 9999;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlayTop {
+  width: 120%;
+  height: 80px;
+  background-color: transparent;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@keyframes fill {
+  0% {
+    box-shadow: 0 0 0 2px inset;
+  }
+  100% {
+    box-shadow: 0 0 0 10px inset;
+  }
+}
+
+@keyframes flowRandomly {
+  0% {
+    top: 50%;
+    left: 0;
+  }
+  10% {
+    top: 50%;
+    left: -30%;
+  }
+  30% {
+    top: 25%;
+    left: -30%;
+  }
+  50% {
+    top: 25%;
+    left: 30%;
+  }
+  70% {
+    top: 70%;
+    left: 30%;
+  }
+  90% {
+    top: 70%;
+    left: -30%;
+  }
+  100% {
+    top: 50%;
+    left: 0;
+  }
+}
+@keyframes skeletonLoadingVideo {
+  0% {
+    background-color: #ccc;
+  }
+  25% {
+    background-color: #999;
+  }
+  50% {
+    background-color: gray;
+  }
+  25% {
+    background-color: #999;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}

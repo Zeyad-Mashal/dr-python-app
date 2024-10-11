@@ -1,0 +1,143 @@
+.AllLectures,
+.AllLectures_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 90vh;
+}
+.AllLectures_container {
+  background-color: #eee;
+}
+.AllLectures_title {
+  margin-bottom: 2rem;
+}
+.all_lectures_list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.all_lectures_list a {
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all_lectures_item {
+  width: 80%;
+  padding: 1rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.all_lectures_item p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.errorPage,
+.errorPage_container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  pointer-events: none;
+}
+.error_404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+.error_404 > h1 {
+  position: absolute;
+  top: -10px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgb(234, 2, 2);
+}
+.error_404 img {
+  width: 250px;
+}
+.errorPage_container p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.errorPage_container span {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+.view_content {
+  width: 100%;
+  display: none;
+}
+.loading_list_lectures {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.loading_item_lectures {
+  width: 80%;
+  height: 70px;
+  padding: 1rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.loading_item_lectures > p {
+  margin: 0;
+  height: 10px;
+  padding: 10px;
+  background-color: #ccc;
+  width: 100%;
+  border-radius: 16px;
+  animation: skeletonLoading 3s ease-in-out infinite;
+}
+@keyframes skeletonLoading {
+  0% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: #aaa;
+  }
+  75% {
+    background-color: #ccc;
+  }
+  100% {
+    background-color: #aaa;
+  }
+}
+@media screen and (max-width: 930px) {
+  .errorPage {
+    display: none;
+  }
+  .view_content {
+    display: block;
+  }
+}

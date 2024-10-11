@@ -1,0 +1,11 @@
+.navbar-brand img {
+  width: 64px;
+}
+.logOut button {
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid #000;
+  margin: 10px 0;
+}
