@@ -36,7 +36,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={isAuth ? <Navigate to={"/subjects"} /> : <Login />} />
-          <Route path="/lectures/:subjectId/:lectureId/:token" element={isAuth ? <Home /> : <Navigate to={"/"} />} />
+          <Route path="/lectures/:subjectId/:lectureId/:token" element={<Home />} />
           <Route path="/subjects" element={isAuth ? <Subjects /> : <Navigate to={"/"} />} />
           <Route path="/all_lectures/:subjectId" element={<AllLectures />} />
         </Routes>
