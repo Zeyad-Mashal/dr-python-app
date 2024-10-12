@@ -6,6 +6,12 @@
   align-items: center;
   flex-direction: column;
 }
+.lecture_container > h2 {
+  margin: 1rem;
+  box-shadow: 4px 4px 10px #aaa;
+  padding: 1rem;
+  border-radius: 10px;
+}
 .lecture_header {
   width: 100%;
 }

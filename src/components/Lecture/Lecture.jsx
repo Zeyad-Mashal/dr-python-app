@@ -33,6 +33,7 @@ const Lecture = () => {
   const intervalRef = useRef(null); // To store the interval
   const sessionRef = useRef(null); // To store the interval
   const [checkMinutes, setCheckMinutes] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const getVideo = (url) => {
     setVideoURL(url);
     const data = {
@@ -52,30 +53,6 @@ const Lecture = () => {
       token
     );
   };
-
-  // const startCounter = () => {
-  //   const data = {
-  //     videoUrl: videoURL,
-  //   };
-  //   console.log(videoURL, lectureId);
-  //   startLectureCounter(data, setError, lectureId, setCounterPopup, timerCount);
-  // };
-
-  // const timerCount = () => {
-  //   setCounterPopup(true);
-  //   intervalRef.current = setInterval(() => {
-  //     setCount((prevCount) => {
-  //       console.log(prevCount);
-  //       if (prevCount === 59 && checkMinutes === false) {
-  //         setMinute((prevMinute) => prevMinute + 1);
-  //         setCheckMinutes(true);
-  //         return 0;
-  //       }
-  //       setCheckMinutes(false);
-  //       return prevCount + 1;
-  //     });
-  //   }, 1000);
-  // };
 
   useEffect(() => {
     let interval = null;
@@ -129,10 +106,14 @@ const Lecture = () => {
     setIsActive(false);
     setSeconds(0);
     setMinutes(0);
+    handleStop();
   };
 
   const closeError = () => {
     document.querySelector(".error_popup").style.display = "none";
+  };
+  const handleStop = () => {
+    setIsPlaying(false); // This will stop the video
   };
   return (
     <>
@@ -160,7 +141,13 @@ const Lecture = () => {
           <FullScreen handle={handle}>
             <div className="overlayTop"></div>
             <div className="video-container">
-              <ReactPlayer url={videoURL} width="100%" height="100%" controls />
+              <ReactPlayer
+                url={videoURL}
+                playing={isPlaying}
+                width="100%"
+                height="100%"
+                controls
+              />
               {handle.active && (
                 <div ref={flowInfoRef} className="flow_info">
                   <p>{student.phone}</p>
