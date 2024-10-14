@@ -18,7 +18,6 @@ const Home = () => {
         </div>
       </div>
       <div className="view_content">
-        <Navbar />
         <Lecture />
       </div>
     </>
