@@ -173,11 +173,6 @@ const Lecture = () => {
             <span class="loader_views_spinner"></span>
           </div>
         ) : null}
-        <div className="error_popup">
-          <FontAwesomeIcon icon={faX} onClick={closeError} />
-          <h3>تحذير !!</h3>
-          <p>{error}</p>
-        </div>
         <div className="lecture_container">
           <div className="lecture_header">
             <img src={image} alt="banner" />
